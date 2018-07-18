@@ -45,6 +45,6 @@ class Dog
   end
 
   def self.find_by_name(name)
-    new_from_db(DB[:conn].execute("SELECT * FROM dogs WHERE dogs.name = ? LIMIT 1", name).first)
+    new_from_db(DB[:conn].execute("SELECT * FROM dogs WHERE dogs.name = ? ORDER BY dogs.id LIMIT 1", name).first)
   end
 end
