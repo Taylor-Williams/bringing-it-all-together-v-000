@@ -36,7 +36,7 @@ class Dog
     if dog
       self.new(id:dog[0], name:dog[1], breed:dog[2])
     else
-      self.create({name:, breed:})
+      self.create(name:, breed:)
     end
   end
 end
