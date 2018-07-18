@@ -23,6 +23,6 @@ class Dog
   end
 
   def self.create(attributes)
-    
+    self.new(attributes)
   end
 end
