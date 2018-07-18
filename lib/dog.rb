@@ -25,4 +25,9 @@ class Dog
   def self.create(attributes)
     self.new(attributes).save
   end
+
+  def self.find_by_id(id)
+    dog = DB[:conn].execute("SELECT * FROM dogs WHERE dogs.id = ?", id).first
+    self.new(dog)
+  end
 end
