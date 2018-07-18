@@ -48,4 +48,8 @@ class Dog
     dog = DB[:conn].execute("SELECT * FROM dogs WHERE dogs.name = ? LIMIT 1", name).first
     self.new(id:dog[0], name:dog[1], breed:dog[2]) if dog
   end
+
+  def update
+    DB[:conn].execute("UPDATE dogs SET name = ?, breed = ? WHERE id = ?", @name, @breed, @id)
+  end
 end
